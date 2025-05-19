@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Briefcase, LogIn, UserPlus } from 'lucide-react';
+import { Briefcase } from 'lucide-react'; // Briefcase can be used for StartWorking logo
 
 const Header: React.FC = () => {
   return (
@@ -11,25 +11,24 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center text-primary hover:text-primary/90">
               <Briefcase className="h-8 w-8 mr-2" />
-              <span className="font-bold text-2xl">JobPortal</span>
+              <span className="font-bold text-2xl">StartWorking</span>
             </a>
           </div>
           <nav className="hidden md:flex space-x-6 items-center">
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">Find Jobs</a>
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">Company Reviews</a>
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">Salary Guide</a>
-            <Button variant="outline" size="sm">Post a Job</Button>
+            <a href="/" className="text-gray-600 hover:text-primary font-medium">HOME</a>
+            <a href="#" className="text-gray-600 hover:text-primary font-medium">ABOUT</a>
+            <a href="#" className="text-gray-600 hover:text-primary font-medium">JOBS</a>
+            <a href="#" className="text-gray-600 hover:text-primary font-medium">CONTACT</a>
           </nav>
-          <div className="hidden md:flex items-center space-x-2">
-            <Button variant="ghost" size="sm">
-              <LogIn className="mr-2 h-4 w-4" /> Sign In
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="ghost" size="sm" asChild>
+              <a href="#">REGISTER</a>
             </Button>
-            <Button size="sm">
-              <UserPlus className="mr-2 h-4 w-4" /> Sign Up
+            <Button variant="default" size="sm" asChild>
+              <a href="#">LOGIN</a>
             </Button>
           </div>
           <div className="md:hidden">
-            {/* Mobile menu button - can be implemented later */}
             <Button variant="ghost" size="icon">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

@@ -1,48 +1,67 @@
 
 import React from 'react';
 import JobCard from './JobCard';
+import { Button } from "@/components/ui/button";
 
 const mockJobs = [
   {
-    logoUrl: 'https://cdn.icon-icons.com/icons2/2429/PNG/512/python_logo_icon_147065.png', // Example logo
+    logoUrl: '/lovable-uploads/b5d2859c-2e5d-43c6-82d0-b7f1ae9dff66.png', // Using the uploaded image as a generic placeholder. Ideally specific avatars/logos.
     title: 'Senior Python Developer',
     companyName: 'Tech Solutions Inc.',
     location: 'New Delhi, India',
     employmentType: 'Full Time',
-    salary: '₹1,20,00,000 - ₹1,50,00,000 PA',
-    postedDate: '2025-04-10',
+    salary: '₹1,20,00,000 - ₹1,50,00,000',
+    postedDate: '2025-04-11',
   },
   {
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg', // Example logo
-    title: 'Frontend React Engineer',
+    // No logoUrl, will use placeholder
+    title: 'Senior Software Engineer - Python',
     companyName: 'Innovate Hub',
-    location: 'Remote',
+    location: 'New Delhi, India',
     employmentType: 'Full Time',
-    salary: 'Competitive',
+    salary: '₹1,20,00,000 - ₹1,50,00,000',
     postedDate: '2025-04-12',
   },
   {
-    // No logo for this one to test placeholder
-    title: 'UX Designer',
+    title: 'Creative Director',
     companyName: 'Creative Minds LLC',
-    location: 'Bangalore, India',
-    employmentType: 'Contract',
-    salary: '₹80,000 - ₹1,20,000 PM',
-    postedDate: '2025-04-15',
+    location: 'Austin, TX',
+    employmentType: 'Full Time',
+    salary: '$120,000 - $150,000',
+    postedDate: '2025-04-12',
+  },
+  {
+    title: 'Product Designer',
+    companyName: 'Design Co.',
+    location: 'Seattle, WA',
+    employmentType: 'Full Time',
+    salary: '$85,000 - $110,000',
+    postedDate: '2025-04-12',
+  },
+  {
+    title: 'Motion Designer',
+    companyName: 'Animators Inc.',
+    location: 'Chicago, IL',
+    employmentType: 'Full Time',
+    salary: '$70,000 - $90,000',
+    postedDate: '2025-04-12',
   }
 ];
 
 const FeaturedJobs: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-slate-50">
+    <section className="py-12 sm:py-16 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
-          Featured <span className="text-primary">Jobs</span>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 mb-8 sm:mb-12">
+          Featured Jobs
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {mockJobs.map((job, index) => (
             <JobCard key={index} job={job} />
           ))}
+        </div>
+        <div className="mt-8 sm:mt-12 text-center">
+          <Button size="lg" className="bg-primary hover:bg-primary/90">Browse More Jobs</Button>
         </div>
       </div>
     </section>

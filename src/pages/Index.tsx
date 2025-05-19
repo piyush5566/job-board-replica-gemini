@@ -5,7 +5,8 @@ import JobSearchForm from "@/components/JobSearchForm";
 import JobCategories from "@/components/JobCategories";
 import TalentSection from "@/components/TalentSection";
 import FeaturedJobs from "@/components/FeaturedJobs";
-import Footer from "@/components/Footer";
+import SuccessStories from "@/components/SuccessStories"; // Import SuccessStories
+import NewFooter from "@/components/NewFooter"; // Import NewFooter
 
 const Index = () => {
   return (
@@ -17,9 +18,9 @@ const Index = () => {
         <JobCategories />
         <TalentSection />
         <FeaturedJobs />
-        {/* Placeholder for other sections like Testimonials, etc. */}
+        <SuccessStories /> {/* Add SuccessStories section */}
       </main>
-      <Footer />
+      <NewFooter /> {/* Replace Footer with NewFooter */}
     </div>
   );
 };

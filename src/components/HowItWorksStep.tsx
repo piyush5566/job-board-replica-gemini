@@ -1,9 +1,8 @@
-
 import React from 'react';
-import { LucideProps } from 'lucide-react'; // For icon type
+import { IconType } from 'react-icons';
 
 interface HowItWorksStepProps {
-  icon: React.ComponentType<LucideProps>; // Icon component
+  icon: IconType; // Icon component from react-icons
   title: string;
   description: string;
 }

@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { MapPin, Mail, Phone, Twitter, Facebook, Linkedin } from 'lucide-react'; // Added social icons
+import { IoLocationOutline, IoMailOutline, IoCallOutline, IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from 'react-icons/io5';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const NewFooter: React.FC = () => {
   return (
@@ -34,31 +34,34 @@ const NewFooter: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
+                <IoLocationOutline size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
                 <span>Rashtrapati Bhavan, President's Estate, New Delhi, Delhi 110004, India</span>
               </li>
               <li className="flex items-start">
-                <Phone size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
-                <a href="tel:+917853289122" className="hover:text-white transition-colors">+91 7853289122</a>
+                <IoCallOutline size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
+                <a href="tel:+917853289122" className="hover:text-white transition-colors">+91 8709032693</a>
               </li>
               <li className="flex items-start">
-                <Mail size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
-                <a href="mailto:plccodes756@gmail.com" className="hover:text-white transition-colors">plccodes756@gmail.com</a>
+                <IoMailOutline size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
+                <a href="mailto:plccodes756@gmail.com" className="hover:text-white transition-colors">pkcodes756@gmail.com</a>
               </li>
             </ul>
             <div className="mt-4 flex space-x-3">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
-                <Twitter size={18} />
+              <a href="https://x.com" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <FaXTwitter size={18} />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
-                <Facebook size={18} />
+              <a href="https://www.facebook.com" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <IoLogoFacebook size={18} />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
-                <Linkedin size={18} />
+              <a href="https://www.linkedin.com" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <IoLogoLinkedin size={18} />
+              </a>
+              <a href="https://www.youtube.com" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <IoLogoYoutube size={18} />
               </a>
               {/* Instagram could be added here if needed:
               <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
-                <Instagram size={18} />
+                <IoLogoInstagram size={18} />
               </a>
               */}
             </div>
@@ -73,4 +76,3 @@ const NewFooter: React.FC = () => {
 };
 
 export default NewFooter;
-

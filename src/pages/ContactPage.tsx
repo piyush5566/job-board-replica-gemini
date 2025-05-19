@@ -1,11 +1,10 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import NewFooter from '@/components/NewFooter';
 import ContactHero from '@/components/ContactHero';
 import ContactForm from '@/components/ContactForm';
 import ContactInfoCard from '@/components/ContactInfoCard';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import { IoLocationOutline, IoMailOutline, IoCallOutline } from 'react-icons/io5';
 
 const ContactPage: React.FC = () => {
   return (
@@ -20,16 +19,16 @@ const ContactPage: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-16">
               <ContactInfoCard
-                icon={<MapPin size={24} className="text-primary" />}
+                icon={<IoLocationOutline size={24} className="text-primary" />}
                 text="Rashtrapati Bhavan, President's Estate, New Delhi, Delhi 110004, India"
               />
               <ContactInfoCard
-                icon={<Mail size={24} className="text-primary" />}
+                icon={<IoMailOutline size={24} className="text-primary" />}
                 text="plccodes756@gmail.com"
                 href="mailto:plccodes756@gmail.com"
               />
               <ContactInfoCard
-                icon={<Phone size={24} className="text-primary" />}
+                icon={<IoCallOutline size={24} className="text-primary" />}
                 text="+91 7853289122"
                 href="tel:+917853289122"
               />
@@ -59,4 +58,3 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
-

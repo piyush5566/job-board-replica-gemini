@@ -1,7 +1,8 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import JobCard from './JobCard';
 import { Button } from "@/components/ui/button";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const mockJobs = [
   {
@@ -49,13 +50,28 @@ const mockJobs = [
 ];
 
 const FeaturedJobs: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  }, []);
+
   return (
     <section className="py-12 sm:py-16 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 mb-8 sm:mb-12">
+        <h2 
+          className="text-2xl sm:text-3xl font-bold text-center text-slate-900 mb-8 sm:mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Featured Jobs
         </h2>
-        <div className="space-y-4 sm:space-y-6">
+        <div 
+          className="space-y-4 sm:space-y-6"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           {mockJobs.map((job, index) => (
             <JobCard key={index} job={job} />
           ))}

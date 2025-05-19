@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Briefcase } from 'lucide-react';
+import { IoBriefcase } from 'react-icons/io5';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <a href="/" className="flex items-center text-white hover:text-slate-200 mb-4">
-              <Briefcase className="h-7 w-7 mr-2" />
+              <IoBriefcase className="h-7 w-7 mr-2" />
               <span className="font-bold text-xl">JobPortal</span>
             </a>
             <p className="text-sm text-slate-400">

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { IoCheckmark } from 'react-icons/io5';
 
 const AboutMission: React.FC = () => {
   return (
@@ -35,15 +34,15 @@ const AboutMission: React.FC = () => {
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <IoCheckmark className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-slate-700">Access to thousands of verified job listings</span>
               </li>
               <li className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <IoCheckmark className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-slate-700">Smart job matching and recommendations</span>
               </li>
               <li className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <IoCheckmark className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-slate-700">Direct connection with top employers</span>
               </li>
             </ul>

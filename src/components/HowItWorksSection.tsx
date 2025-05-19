@@ -1,22 +1,21 @@
-
 import React from 'react';
 import HowItWorksStep from './HowItWorksStep';
-import { Edit3, Search, Send } from 'lucide-react'; // Using Edit3 for 'create-profile', Search for 'search', Send for 'apply-with-ease'
+import { IoPencil, IoSearch, IoPaperPlane } from 'react-icons/io5';
 
 const HowItWorksSection: React.FC = () => {
   const steps = [
     {
-      icon: Edit3, // Corresponds to 'create-profile'
+      icon: IoPencil, // Corresponds to 'create-profile'
       title: 'Create Your Profile',
       description: 'Build your professional profile, upload your resume, and highlight your skills and experience.',
     },
     {
-      icon: Search, // Corresponds to 'search'
+      icon: IoSearch, // Corresponds to 'search'
       title: 'Search Jobs',
       description: 'Browse through thousands of verified job listings and filter by category, location, and company.',
     },
     {
-      icon: Send, // Corresponds to 'apply-with-ease'
+      icon: IoPaperPlane, // Corresponds to 'apply-with-ease'
       title: 'Apply With Ease',
       description: 'Apply to jobs with just one click and track all your applications in one place.',
     },

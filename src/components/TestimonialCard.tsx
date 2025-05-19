@@ -1,13 +1,11 @@
-
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { FaQuoteLeft } from 'react-icons/fa';
 
 interface TestimonialCardProps {
   quote: string;
   authorName: string;
   authorRole: string;
-  avatarUrl?: string;
+  avatarUrl: string;
   highlighted?: boolean;
 }
 
@@ -16,35 +14,23 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   authorName,
   authorRole,
   avatarUrl,
-  highlighted = false,
 }) => {
   return (
-    <Card className={`w-full ${highlighted ? 'bg-green-600 text-white' : 'bg-white text-slate-700'} shadow-lg rounded-lg overflow-hidden`}>
-      <CardContent className="p-6">
-        <div className="flex flex-col h-full">
-          <div className="relative mb-4">
-            <span className={`absolute -top-3 -left-1 text-6xl font-bold ${highlighted ? 'text-green-400' : 'text-primary'} opacity-50`}>
-              “
-            </span>
-            <p className={`text-sm sm:text-base italic leading-relaxed relative z-10 ${highlighted ? 'text-green-50' : 'text-slate-600'}`}>
-              {quote}
-            </p>
-          </div>
-          <div className="mt-auto flex items-center pt-4">
-            <Avatar className="h-10 w-10 mr-3">
-              {avatarUrl && <AvatarImage src={avatarUrl} alt={authorName} />}
-              <AvatarFallback className={`${highlighted ? 'bg-green-500 text-white' : 'bg-slate-200 text-primary'}`}>
-                {authorName.split(' ').map(n => n[0]).join('')}
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <p className={`font-semibold text-sm ${highlighted ? 'text-white' : 'text-slate-800'}`}>{authorName}</p>
-              <p className={`text-xs ${highlighted ? 'text-green-100' : 'text-slate-500'}`}>{authorRole}</p>
-            </div>
-          </div>
+    <div className="rounded-lg p-6 h-full bg-slate-100 text-slate-800">
+      <FaQuoteLeft className="text-3xl mb-4 text-primary" />
+      <p className="mb-4">{quote}</p>
+      <div className="flex items-center">
+        <img 
+          src={avatarUrl} 
+          alt={authorName}
+          className="w-12 h-12 rounded-full mr-4 object-cover"
+        />
+        <div>
+          <h5 className="font-semibold mb-1">{authorName}</h5>
+          <p className="text-sm text-slate-500">{authorRole}</p>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 

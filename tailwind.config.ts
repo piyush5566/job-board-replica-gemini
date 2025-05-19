@@ -1,5 +1,6 @@
 
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
 	darkMode: ["class"],
@@ -107,5 +108,74 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		plugin(function({ addComponents }) {
+			addComponents({
+				'.breadcrumb': {
+					display: 'flex',
+					flexWrap: 'wrap',
+					padding: '0.5rem 1rem',
+					listStyle: 'none'
+				},
+				'.breadcrumb-item + .breadcrumb-item::before': {
+					display: 'inline-block',
+					padding: '0 0.5rem',
+					color: '#e5e7eb',
+					content: '"/"'
+				},
+				'.breadcrumb-item.active': {
+					color: '#e5e7eb'
+				},
+				'.display-3': {
+					fontSize: '2.5rem',
+					fontWeight: '700',
+					lineHeight: '1.2'
+				},
+				'.container-xxl': {
+					width: '100%',
+					paddingRight: '1rem',
+					paddingLeft: '1rem',
+					marginRight: 'auto',
+					marginLeft: 'auto',
+					'@screen xl': {
+						maxWidth: '1320px'
+					}
+				},
+				'.btn-primary': {
+					backgroundColor: 'var(--secondary)',
+					color: 'white',
+					fontWeight: '600',
+					'&:hover': {
+						backgroundColor: '#1a8fe3'
+					}
+				},
+				'.fs-5': {
+					fontSize: '1.25rem'
+				},
+				'.fw-medium': {
+					fontWeight: '500'
+				},
+				'.py-md-3': {
+					paddingTop: '0.75rem',
+					paddingBottom: '0.75rem',
+					'@screen md': {
+						paddingTop: '1rem',
+						paddingBottom: '1rem'
+					}
+				},
+				'.px-md-5': {
+					paddingLeft: '1.25rem',
+					paddingRight: '1.25rem',
+					'@screen md': {
+						paddingLeft: '3rem',
+						paddingRight: '3rem'
+					}
+				},
+				'.me-3': {
+					marginRight: '0.75rem'
+				}
+			})
+		})
+	],
 } satisfies Config;

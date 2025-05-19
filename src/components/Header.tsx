@@ -32,16 +32,17 @@ const Header: React.FC = () => {
           </div>
           <nav className="hidden md:flex space-x-1 items-center">
             <NavLink to="/">HOME</NavLink>
-            <NavLink to="/about">ABOUT</NavLink> {/* Updated to NavLink */}
-            <NavLink to="/jobs">JOBS</NavLink> {/* Assuming a /jobs route might exist or be added later */}
-            <NavLink to="/contact">CONTACT</NavLink> {/* Assuming a /contact route */}
+            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink to="/jobs">JOBS</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
           </nav>
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/register">REGISTER</Link> {/* Assuming /register route */}
+            {/* Fix: Wrap Link inside Button properly */}
+            <Button variant="ghost" size="sm">
+              <Link to="/register">REGISTER</Link> 
             </Button>
-            <Button variant="default" size="sm" asChild>
-              <Link to="/login">LOGIN</Link> {/* Assuming /login route */}
+            <Button variant="default" size="sm">
+              <Link to="/login">LOGIN</Link>
             </Button>
           </div>
           <div className="md:hidden">

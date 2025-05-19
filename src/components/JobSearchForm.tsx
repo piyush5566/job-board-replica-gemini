@@ -14,7 +14,7 @@ const JobSearchForm: React.FC = () => {
               id="companyName"
               type="text"
               placeholder="Enter company name"
-              className="bg-white text-slate-900 placeholder:text-slate-400"
+              className="bg-white text-slate-900 placeholder:text-slate-400 text-base md:text-sm" /* Ensured text size from input.tsx */
             />
           </div>
           <div className="md:col-span-1">
@@ -23,7 +23,7 @@ const JobSearchForm: React.FC = () => {
               id="category"
               type="text"
               placeholder="Enter category"
-              className="bg-white text-slate-900 placeholder:text-slate-400"
+              className="bg-white text-slate-900 placeholder:text-slate-400 text-base md:text-sm"
             />
           </div>
           <div className="md:col-span-1">
@@ -32,12 +32,12 @@ const JobSearchForm: React.FC = () => {
               id="location"
               type="text"
               placeholder="Enter location"
-              className="bg-white text-slate-900 placeholder:text-slate-400"
+              className="bg-white text-slate-900 placeholder:text-slate-400 text-base md:text-sm"
             />
           </div>
-          <Button 
-            type="submit" 
-            className="w-full md:col-span-1 bg-slate-800 hover:bg-slate-700 text-white py-2.5 text-base h-10"
+          <Button
+            type="submit"
+            className="w-full md:col-span-1 bg-slate-800 hover:bg-slate-700 text-white py-2.5 h-10 text-sm font-medium" /* Matched h-10 from input */
           >
             Search
           </Button>

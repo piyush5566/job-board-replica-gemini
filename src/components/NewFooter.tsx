@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin } from 'lucide-react'; // Phone and Mail icons are not in the allowed list
+import { MapPin, Mail, Phone, Twitter, Facebook, Linkedin } from 'lucide-react'; // Added social icons
 
 const NewFooter: React.FC = () => {
   return (
@@ -11,8 +11,8 @@ const NewFooter: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
             </ul>
@@ -22,10 +22,10 @@ const NewFooter: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Jobs</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Register</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Login</a></li>
+              <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="/jobs" className="hover:text-white transition-colors">Jobs</a></li>
+              <li><a href="/register" className="hover:text-white transition-colors">Register</a></li>
+              <li><a href="/login" className="hover:text-white transition-colors">Login</a></li>
             </ul>
           </div>
 
@@ -34,24 +34,38 @@ const NewFooter: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-2 mt-1 text-primary flex-shrink-0" />
+                <MapPin size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
                 <span>Rashtrapati Bhavan, President's Estate, New Delhi, Delhi 110004, India</span>
               </li>
               <li className="flex items-start">
-                {/* No Phone icon */}
-                <span className="w-5 mr-2 mt-1 text-primary flex-shrink-0 text-center font-bold">P:</span>
-                <span>+91 7853289122</span>
+                <Phone size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
+                <a href="tel:+917853289122" className="hover:text-white transition-colors">+91 7853289122</a>
               </li>
               <li className="flex items-start">
-                {/* No Mail icon */}
-                <span className="w-5 mr-2 mt-1 text-primary flex-shrink-0 text-center font-bold">E:</span>
+                <Mail size={18} className="mr-3 mt-1 text-primary flex-shrink-0" />
                 <a href="mailto:plccodes756@gmail.com" className="hover:text-white transition-colors">plccodes756@gmail.com</a>
               </li>
             </ul>
+            <div className="mt-4 flex space-x-3">
+              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <Linkedin size={18} />
+              </a>
+              {/* Instagram could be added here if needed:
+              <a href="#" className="text-slate-400 hover:text-white transition-colors p-2 bg-slate-700 rounded-md">
+                <Instagram size={18} />
+              </a>
+              */}
+            </div>
           </div>
         </div>
         <div className="border-t border-slate-700 pt-8 text-center text-sm text-slate-400">
-          &copy; {new Date().getFullYear()} Your Job Portal. All rights reserved.
+          &copy; {new Date().getFullYear()} StartWorking. All rights reserved. Designed By HTML Codex.
         </div>
       </div>
     </footer>
@@ -59,3 +73,4 @@ const NewFooter: React.FC = () => {
 };
 
 export default NewFooter;
+

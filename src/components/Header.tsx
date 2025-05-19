@@ -1,7 +1,23 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Briefcase } from 'lucide-react'; // Briefcase can be used for StartWorking logo
+import { Briefcase } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation
+
+const NavLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  return (
+    <Link
+      to={to}
+      className={`text-gray-600 hover:text-primary font-medium px-3 py-2 rounded-md text-sm ${
+        isActive ? 'text-primary bg-primary/10' : ''
+      }`}
+    >
+      {children}
+    </Link>
+  );
+};
 
 const Header: React.FC = () => {
   return (
@@ -9,26 +25,27 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="flex items-center text-primary hover:text-primary/90">
+            <Link to="/" className="flex items-center text-primary hover:text-primary/90">
               <Briefcase className="h-8 w-8 mr-2" />
               <span className="font-bold text-2xl">StartWorking</span>
-            </a>
+            </Link>
           </div>
-          <nav className="hidden md:flex space-x-6 items-center">
-            <a href="/" className="text-gray-600 hover:text-primary font-medium">HOME</a>
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">ABOUT</a>
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">JOBS</a>
-            <a href="#" className="text-gray-600 hover:text-primary font-medium">CONTACT</a>
+          <nav className="hidden md:flex space-x-1 items-center">
+            <NavLink to="/">HOME</NavLink>
+            <NavLink to="/about">ABOUT</NavLink> {/* Updated to NavLink */}
+            <NavLink to="/jobs">JOBS</NavLink> {/* Assuming a /jobs route might exist or be added later */}
+            <NavLink to="/contact">CONTACT</NavLink> {/* Assuming a /contact route */}
           </nav>
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" size="sm" asChild>
-              <a href="#">REGISTER</a>
+              <Link to="/register">REGISTER</Link> {/* Assuming /register route */}
             </Button>
             <Button variant="default" size="sm" asChild>
-              <a href="#">LOGIN</a>
+              <Link to="/login">LOGIN</Link> {/* Assuming /login route */}
             </Button>
           </div>
           <div className="md:hidden">
+            {/* Mobile menu button - functionality not implemented in this step */}
             <Button variant="ghost" size="icon">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
